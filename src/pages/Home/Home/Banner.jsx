@@ -8,8 +8,8 @@ const Banner = () => {
             <div className="hero-content text-center text-neutral-content">
 
             </div>
-            <div className="  pt-[360px] text-blue-300 ">
-                <p className="text-2xl text-center">StoryStream Company</p>
+            <div className="pt-[260px]  lg:pt-[360px] text-blue-300 ">
+                <p className="text-2xl text-center text-white">StoryStream Company</p>
                 <p className="text-4xl text-center">{`"BlogCraft: Nurturing Your Online Voice"`}</p>
                <Link to = "/login">
                <div className="text-center ">

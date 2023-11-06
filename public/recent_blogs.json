@@ -1,0 +1,58 @@
+[
+    {
+      "title": "Beauty Blog Bliss",
+      "image": "https://i.ibb.co/196J07x/beauty.png",
+      "short_description": "Discover the latest beauty trends, tips, and product reviews.",
+      "category": "Beauty Blog",
+      "details_button": "Details",
+      "wishlist_button": "Wishlist",
+      "id":1
+
+    },
+    {
+      "title": "Education Emporium",
+      "image": "https://i.ibb.co/7R3PT7F/Education.webp",
+      "short_description": "Explore educational resources, learning techniques, and academic insights.",
+      "category": "Edu. Blog",
+      "details_button": "Details",
+      "wishlist_button": "Wishlist",
+      "id": 2
+    },
+    {
+      "title": "Fashion Forward",
+      "image": "https://i.ibb.co/kGs19xk/fashion.jpg",
+      "short_description": "Stay updated on fashion trends, style inspiration, and runway reviews.",
+      "category": "Fashion Blog",
+      "details_button": "Details",
+      "wishlist_button": "Wishlist",
+      "id": 3
+    },
+    {
+      "title": "Gourmet Gurus",
+      "image": "https://i.ibb.co/8zhxk3f/food.jpg",
+      "short_description": "Indulge in delectable recipes, culinary adventures, and foodie delights.",
+      "category": "Food Blog",
+      "details_button": "Details",
+      "wishlist_button": "Wishlist",
+      "id": 4
+    },
+    {
+      "title": "Game On Chronicles",
+      "image": "https://i.ibb.co/TMw2J6D/gaming.png",
+      "short_description": "Level up your gaming experience with reviews, strategies, and gaming news.",
+      "category": "Gaming Blog",
+      "details_button": "Details",
+      "wishlist_button": "Wishlist",
+      "id": 5
+    },
+    {
+      "title": "Wanderlust Journeys",
+      "image": "https://i.ibb.co/3sxDjvX/travel.jpg",
+      "short_description": "Embark on virtual adventures, travel tips, and destination discoveries.",
+      "category": "Travel Blog",
+      "details_button": "Details",
+      "wishlist_button": "Wishlist",
+      "id": 6
+    }
+  ]
+  
