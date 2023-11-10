@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
-import img from '../../../public/login/login.svg'
+import img from '../../../public/login/login.png'
+import swal from 'sweetalert';
 import { useContext } from 'react';
 import { AuthContext } from '../Providers/AuthProvider';
 
@@ -7,28 +8,29 @@ import { AuthContext } from '../Providers/AuthProvider';
 
 const Login = () => {
 
-    const {signInUser} = useContext(AuthContext);
+    const {signInUser} = useContext(AuthContext)
 
-    const handleLogin = event => {
-        event.preventDefault();
-        const form = event.target;
-        const email = form. email.value;
-        const password = form.password.value;
-        console.log( email, password)
+    const handleLogin = e => {
+        e.preventDefault();
+
+        const email = e.target.email.value;
+        const password = e.target.password.value;
+        console.log(email, password)
 
         signInUser(email, password)
-        .then(result => {
-            const user = result.user;
-            console.log(user)
-        })
-        .catch(error => console.log(error) );
-
+            .then(() => {
+                swal("Success!", "Login Successfully!", "success");
+                // navigate(location?.state ? location.state : "/");
+            })
+            .catch(() => {
+                swal("Error!", "Pleas check your email and password!", "error");
+            });
     }
 
     return (
         <div className="hero min-h-screen bg-base-200">
             <div className="hero-content flex-col lg:flex-row">
-                <div className="w-1/2 mr-16">
+                <div className="w-1/2 p-10 mr-16">
                     <img src={img} alt="" />
 
                 </div>
@@ -39,13 +41,13 @@ const Login = () => {
                             <label className="label">
                                 <span className="label-text">Email</span>
                             </label>
-                            <input type="email" placeholder="email" className="input input-bordered" required />
+                            <input type="email" name='email' placeholder="email" className="input input-bordered" required />
                         </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Password</span>
                             </label>
-                            <input type="password" placeholder="password" className="input input-bordered" required />
+                            <input type="password" name='password' placeholder="password" className="input input-bordered" required />
                             <label className="label">
                                 <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                             </label>

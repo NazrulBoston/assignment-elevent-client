@@ -1,11 +1,41 @@
 
 
 const AddBlog = () => {
+    const handleBlog = event => {
+        event.preventDefault();
+
+        const form = event.target;
+
+        const title = form.title.value;
+        const category = form.category.value;
+        const shortDescription = form.shortDescription.value;
+        const longDescription = form.longDescription.value;
+        const image = form.image.value;
+
+        const newBlog = { title, category, shortDescription, longDescription, image }
+        console.log(newBlog)
+
+        // send data to the server
+        fetch('http://localhost:501/addblog', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(newBlog)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+            })
+
+
+    }
+
     return (
         <div>
-            <div className=" bg-[#c9c3ee] p-24 ">
+            <div className=" bg-blue-200 p-24 ">
                 <h2 className="text-3xl font-bold text-center">ADD BLOGS</h2>
-                <form>
+                <form onSubmit={handleBlog}>
                     {/* form row */}
                     <div className="md:flex mb-6 ">
                         <div className="form-control w-full ">
@@ -16,12 +46,12 @@ const AddBlog = () => {
                                 <input type="text" name="title" placeholder="title" className="input input-bordered w-full" />
                             </label>
                         </div>
-                       
+
                     </div>
                     {/* form row */}
                     <div className="md:flex mb-6">
-                    <div className="form-control w-full" >
-                            <select className="select select-bordered w-full">
+                        <div className="form-control w-full" >
+                            <select className="select select-bordered w-full" name="category">
                                 <option disabled selected>Category</option>
                                 <option>Beauty Blog</option>
                                 <option>Edu. Blog</option>
@@ -32,7 +62,7 @@ const AddBlog = () => {
                             </select>
 
                         </div>
-                        
+
                     </div>
                     {/* form row */}
                     <div className="md:flex mb-6">
@@ -41,10 +71,10 @@ const AddBlog = () => {
                                 <span className="label-text">Short Description</span>
                             </label>
                             <label className="input-group">
-                                <input type="text" name="price" placeholder="short description" className="input input-bordered w-full" />
+                                <input type="text" name="shortDescription" placeholder="short description" className="input input-bordered w-full" />
                             </label>
                         </div>
-                        
+
                     </div>
                     <div className="md:flex mb-6">
                         <div className="form-control w-full">
@@ -52,11 +82,25 @@ const AddBlog = () => {
                                 <span className="label-text">Long Description</span>
                             </label>
                             <label className="input-group">
-                            <textarea placeholder="description" className="textarea textarea-bordered textarea-md w-full" ></textarea>
+                                <textarea placeholder="description" name="longDescription" className="textarea textarea-bordered textarea-md w-full" ></textarea>
                             </label>
                         </div>
-                        
+
                     </div>
+
+
+                    <div className="md:flex mb-6">
+                        <div className="form-control w-full">
+                            <label className="label">
+                                <span className="label-text">Published date</span>
+                            </label>
+                            <label className="input-group">
+                                <input type="date" name="date" placeholder="date" className="input input-bordered w-full" />
+                            </label>
+                        </div>
+
+                    </div>
+
                     {/* form photo url row */}
                     <div className=" mb-6">
                         <div className="form-control w-full">
@@ -68,7 +112,7 @@ const AddBlog = () => {
                             </label>
                         </div>
                     </div>
-                    <input type="submit" value="Add Blog" name="submit" className="btn btn-block border-none bg-blue-400 text-white" />
+                    <input type="submit" value="Add Blog" name="submit" className="btn btn-block border-none bg-blue-600 text-white" />
                 </form>
 
             </div>
