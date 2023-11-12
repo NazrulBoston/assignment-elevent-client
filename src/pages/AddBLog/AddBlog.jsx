@@ -9,10 +9,9 @@ const AddBlog = () => {
         const title = form.title.value;
         const category = form.category.value;
         const shortDescription = form.shortDescription.value;
-        const longDescription = form.longDescription.value;
         const image = form.image.value;
 
-        const newBlog = { title, category, shortDescription, longDescription, image }
+        const newBlog = { title, category, shortDescription, image }
         console.log(newBlog)
 
         // send data to the server
@@ -26,6 +25,9 @@ const AddBlog = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
+                if (data.insertedId) {
+                    swal("product Added!", "Your product has been added.", "success");
+                }
             })
 
 
@@ -76,18 +78,6 @@ const AddBlog = () => {
                         </div>
 
                     </div>
-                    <div className="md:flex mb-6">
-                        <div className="form-control w-full">
-                            <label className="label">
-                                <span className="label-text">Long Description</span>
-                            </label>
-                            <label className="input-group">
-                                <textarea placeholder="description" name="longDescription" className="textarea textarea-bordered textarea-md w-full" ></textarea>
-                            </label>
-                        </div>
-
-                    </div>
-
 
                     <div className="md:flex mb-6">
                         <div className="form-control w-full">
