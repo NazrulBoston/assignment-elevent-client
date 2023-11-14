@@ -8,13 +8,21 @@ const RecentBlogs = () => {
     const[ recentBlogs, setRecentBlogs] = useState([])
 
     useEffect(() => {
-        fetch('/recent_blogs.json')
+        fetch('http://localhost:501/addblog')
         .then(res => res.json())
         .then(data => {
             setRecentBlogs(data)
         } )
     },[])
-    
+    console.log(recentBlogs)
+
+    const sortedBlogs = recentBlogs
+    .map((blog) => ({
+      ...blog,
+      publishDate: new Date(blog.date),
+    }))
+    .sort((a, b) => b.publishDate - a.publishDate);
+    console.log(sortedBlogs)
     return (
 
         <div>
@@ -24,7 +32,7 @@ const RecentBlogs = () => {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {
-                    recentBlogs.map(allblog => <RecentBlog key={allblog.id} allblog={allblog}></RecentBlog>)
+                    sortedBlogs.slice(0,6).map(allblog => <RecentBlog key={allblog.id} allblog={allblog}></RecentBlog>)
                 }
             </div>
             

@@ -1,7 +1,7 @@
 
 
 const RecentBlog = ({ allblog }) => {
-    const { title, image, short_description, category, details_button, wishlist_button } = allblog;
+    const { title, image, short_description, category, details_button, wishlist_button, date } = allblog;
 
 
     return (
@@ -12,6 +12,7 @@ const RecentBlog = ({ allblog }) => {
                     {title}
                     <div className="badge bg-blue-200">{category}</div>
                 </h2>
+                <p>Publish date:{date}</p>
                 <p>{short_description}</p>
                 <div className="card-actions">
                     <div className="badge bg-primary text-white">{details_button}</div>

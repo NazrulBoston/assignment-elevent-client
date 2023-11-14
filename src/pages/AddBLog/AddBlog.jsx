@@ -1,6 +1,10 @@
+import { useContext } from "react";
+import { AuthContext } from "../Providers/AuthProvider";
 
 
 const AddBlog = () => {
+
+    const {user} = useContext(AuthContext)
     const handleBlog = event => {
         event.preventDefault();
 
@@ -8,10 +12,11 @@ const AddBlog = () => {
 
         const title = form.title.value;
         const category = form.category.value;
-        const shortDescription = form.shortDescription.value;
+        const description = form.description.value;
+        const date = form.date.value;
         const image = form.image.value;
 
-        const newBlog = { title, category, shortDescription, image }
+        const newBlog = { title, category, description, image, date, email: user.email }
         console.log(newBlog)
 
         // send data to the server
@@ -70,10 +75,10 @@ const AddBlog = () => {
                     <div className="md:flex mb-6">
                         <div className="form-control w-full">
                             <label className="label">
-                                <span className="label-text">Short Description</span>
+                                <span className="label-text"> Description</span>
                             </label>
                             <label className="input-group">
-                                <input type="text" name="shortDescription" placeholder="short description" className="input input-bordered w-full" />
+                                <input type="text" name="description" placeholder="description" className="input input-bordered w-full" />
                             </label>
                         </div>
 
