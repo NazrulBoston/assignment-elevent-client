@@ -1,7 +1,8 @@
+import { Link } from "react-router-dom";
 
 
 const RecentBlog = ({ allblog }) => {
-    const { title, image, short_description, category, details_button, wishlist_button, date } = allblog;
+    const { title, image, description, category, details_button, wishlist_button, date } = allblog;
 
 
     return (
@@ -10,13 +11,21 @@ const RecentBlog = ({ allblog }) => {
             <div className="card-body">
                 <h2 className="card-title">
                     {title}
-                    <div className="badge bg-blue-200">{category}</div>
+                    <div ><span className="bg-blue-200 rounded">Category:</span> {category}</div>
                 </h2>
-                <p>Publish date:{date}</p>
-                <p>{short_description}</p>
+                <p> <span className="text-red-400">Publish date:</span>  {date}</p>
+                <p>Description: {description.slice(0, 100)}...<Link to="/blogDetails" className="text-red-500 font-medium">Read More</Link></p>
+
                 <div className="card-actions">
-                    <div className="badge bg-primary text-white">{details_button}</div>
-                    <div className="badge bg-blue-200">{wishlist_button}</div>
+                    <Link to ="/wishlistblogs">
+                        <button className="badge badge-outline text-white bg-blue-500 h-7 border-none rounded-md w-16"
+                        >wishlist</button>
+                    </Link>
+                    <Link to = "/blogDetails">
+                        <button className="badge badge-outline text-white bg-amber-500 h-7 border-none rounded-md w-16"
+                        >details</button>
+                    </Link>
+
                 </div>
             </div>
         </div>

@@ -7,6 +7,7 @@ import FeaturedBlogs from "../pages/FeaturedBlogs/FeaturedBlogs";
 import WishList from "../pages/WishList/WishList";
 import Login from "../pages/Login/Login";
 import SignUp from "../pages/SignUp/SignUp";
+import BlogDetailsPage from "../pages/BlogDetailsPage/BlogDetailsPage";
 
 
 
@@ -44,6 +45,10 @@ const router = createBrowserRouter([
         {
             path: "signup",
             element: <SignUp></SignUp>
+        },
+        {
+            path:'/blogDetails',
+            element:<BlogDetailsPage></BlogDetailsPage>
         }
        
       ]
