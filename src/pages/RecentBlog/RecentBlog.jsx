@@ -14,8 +14,7 @@ const RecentBlog = ({ allblog }) => {
                     <div ><span className="bg-blue-200 rounded">Category:</span> {category}</div>
                 </h2>
                 <p> <span className="text-red-500 font-semibold">Publish date:</span>  {date}</p>
-                <p> <span className="text-red-500 font-semibold">Description:</span> {description.slice(0, 100)}...<Link to="/blogDetails" className="text-red-500 font-medium">Read More</Link></p>
-
+                <p> <span className="text-red-500 font-semibold">Description:</span> {description.slice(0, 120)}</p>
                 <div className="card-actions">
                     <Link to ="/wishlistblogs">
                         <button className="badge badge-outline text-white bg-blue-500 h-7 border-none rounded-md w-16"

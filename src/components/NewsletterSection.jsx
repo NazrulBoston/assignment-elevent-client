@@ -27,7 +27,7 @@ const NewsletterSection = () => {
             placeholder="Inter Your Email Here"
             className="pl-4  w-2/3  border-none"
           />
-          <input value="Submit" onClick={handleSubmitNewNewsletter} className="btn-group btn border-none border-l-2 w-1/3 border-gray-200 rounded-r-md"/>
+          <input value="Submit" onClick={handleSubmitNewNewsletter} className=" text-blue-500  btn-group btn border-none border-l-2 w-1/3 border-gray-200 rounded-r-md"/>
         </form>
         </div>
       </div>
