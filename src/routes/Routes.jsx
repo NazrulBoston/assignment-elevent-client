@@ -47,8 +47,9 @@ const router = createBrowserRouter([
             element: <SignUp></SignUp>
         },
         {
-            path:'/blogDetails',
-            element:<BlogDetailsPage></BlogDetailsPage>
+            path:'/blogDetails/:id',
+            element:<BlogDetailsPage></BlogDetailsPage>,
+            loader:({params}) => fetch(`http://localhost:501/addblog/${params.id}`)
         }
        
       ]

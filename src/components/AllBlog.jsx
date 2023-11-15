@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const AllBlog = ({blog}) => {
-    const {title, image, description, category, date } = blog;
+    const {title, image, description, category, date, _id } = blog;
     return (
         <div className="card bg-base-100 shadow-xl">
         <figure><img className="h-[300px]" src={image} alt="Shoes" /></figure>
@@ -18,7 +18,7 @@ const AllBlog = ({blog}) => {
                     <button className="badge badge-outline text-white bg-blue-500 h-7 border-none rounded-md w-16"
                     >wishlist</button>
                 </Link>
-                <Link to = "/blogDetails">
+                <Link to = {`/blogDetails/${_id}`}>
                     <button className="badge badge-outline text-white bg-amber-500 h-7 border-none rounded-md w-16"
                     >details</button>
                 </Link>
