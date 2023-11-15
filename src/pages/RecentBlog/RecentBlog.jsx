@@ -13,8 +13,8 @@ const RecentBlog = ({ allblog }) => {
                     {title}
                     <div ><span className="bg-blue-200 rounded">Category:</span> {category}</div>
                 </h2>
-                <p> <span className="text-red-400">Publish date:</span>  {date}</p>
-                <p>Description: {description.slice(0, 100)}...<Link to="/blogDetails" className="text-red-500 font-medium">Read More</Link></p>
+                <p> <span className="text-red-500 font-semibold">Publish date:</span>  {date}</p>
+                <p> <span className="text-red-500 font-semibold">Description:</span> {description.slice(0, 100)}...<Link to="/blogDetails" className="text-red-500 font-medium">Read More</Link></p>
 
                 <div className="card-actions">
                     <Link to ="/wishlistblogs">
